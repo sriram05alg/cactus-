@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Ensure proper mobile scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cactus Floppy</title>
+    <link rel="icon" , href="images/bird2.png">
+    
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background: url("images/background.jpg") no-repeat center center;
+        background-size: cover;
+      }
+
+      #gameCanvas {
+        display: block;
+        margin: 0 auto;
+      }
+
+      #restartBtn {
+        position: absolute;
+        bottom: 20px;  /* Place it towards the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 30px;
+        font-size: 24px;
+        background-color: #ff4e50;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        display: none;  /* Hidden until game over */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      #restartBtn:hover {
+        background-color: #078326;
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      /* Prominent Start Game button, centered */
+      #startBtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 40px;
+        font-size: 28px;
+        background-color: #078326;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.2s;
+      }
+      #startBtn:hover {
+        background-color: #e84347;
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    </style>
+</head>
+<body>
+    <!-- Start button visible initially -->
+    <button id="startBtn">Start Game</button>
+    <canvas id="gameCanvas"></canvas>
+    <button id="restartBtn">Restart</button>
+
+    <script src="game.js"></script>
+</body>
+</html>
